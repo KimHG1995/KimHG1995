@@ -4,6 +4,10 @@
 
 [한국어](README.md)
 
+> **AI Summary**  
+> TypeScript backend engineer with experience operating large-scale services across backend, data, and infrastructure automation.  
+> Building side projects around Code Graph MCP, AI quality automation, log analytics, and document infrastructure to solve real engineering and operational problems.
+
 I build backend systems primarily with TypeScript and NestJS.  
 I am also interested in reducing repetitive operational work and making software easier to understand and verify through automation and AI-assisted engineering tools.
 
