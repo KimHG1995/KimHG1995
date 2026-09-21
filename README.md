@@ -5,14 +5,14 @@
 [English](README.en.md)
 
 TypeScript와 NestJS를 중심으로 백엔드 시스템을 개발하고 있습니다.  
-현재 AI 쪽에서는 RAG나 모델 학습보다 **Coding Agent가 실제 코드베이스를 더 잘 탐색하고 검증하도록 만드는 개발 도구**에 집중하고 있습니다.
+현재 AI 쪽에서는 RAG나 모델 학습보다 **Coding Agent를 실제 개발 흐름에 연결하고, 그 효과를 측정하는 도구**에 관심을 두고 있습니다.
 
 ## 주요 프로젝트
 
 | 프로젝트 | 무엇을 해결하는지 |
 | --- | --- |
-| [ts-graph-tools](https://github.com/KimHG1995/ts-graph-tools) | Coding Agent가 TypeScript 파일을 하나씩 읽지 않고 symbol, caller, flow, impact를 compiler-resolved graph로 조회할 수 있게 만든 MCP 환경 |
-| [agent-bench](https://github.com/KimHG1995/agent-bench) | ts-graph-tools가 실제로 도움이 되는지 Codex의 file-only 탐색과 반복 비교하는 Eval 도구. 실측에서 Graph는 도구 호출을 25% 줄였지만 토큰과 실행 시간은 오히려 증가해 개선 지점을 확인했습니다. |
+| [ts-graph-tools](https://github.com/KimHG1995/ts-graph-tools) | 기존 `@ttsc/graph`를 target repository에 의존성으로 설치하지 않고 Codex/Claude에서 사용할 수 있도록 구성한 외부 host 및 MCP 등록 환경 |
+| [agent-bench](https://github.com/KimHG1995/agent-bench) | `@ttsc/graph`를 Coding Agent에 연결했을 때 file-only 탐색보다 실제로 도움이 되는지 반복 비교하는 Eval 도구. 실측에서 도구 호출은 줄었지만 토큰과 실행 시간은 증가해 개선 지점을 확인했습니다. |
 | [codex-quality-setup](https://github.com/KimHG1995/codex-quality-setup) | 코드 변경 범위에 맞는 typecheck, lint, test를 선택하고 완료 조건까지 검증하는 Codex 품질 자동화 |
 | [PaperTrail](https://github.com/KimHG1995/papertrail) | 비동기 렌더링, 버전 관리, 멱등성, Audit Trail을 포함한 전자문서 생성 플랫폼 |
 | [LogLens](https://github.com/KimHG1995/loglens) | ClickHouse Materialized View 기반 API 트래픽, 응답시간, 에러 분석 백엔드 |
@@ -21,12 +21,12 @@ TypeScript와 NestJS를 중심으로 백엔드 시스템을 개발하고 있습�
 
 ## AI Developer Tooling
 
-현재 AI 관련 작업은 다음 흐름에 집중합니다.
+현재는 이미 존재하는 AI/개발 도구를 실제 개발 환경에 연결하고, 그 효과를 검증하는 흐름을 만들고 있습니다.
 
 ```text
 코드베이스 탐색
   ↓
-Code Graph / MCP로 필요한 관계 조회
+MCP / Code Graph 도구 연동
   ↓
 Coding Agent가 구현
   ↓
@@ -35,15 +35,15 @@ Typecheck / Lint / Test로 검증
 Agent Eval로 실제 효과 측정
 ```
 
-직접 만들고 있는 영역:
+직접 작업하고 있는 영역:
 
-- TypeScript Code Graph / MCP
-- Coding Agent용 repository context
+- `@ttsc/graph` 기반 MCP 호스팅/연동
+- Coding Agent용 repository context 구성
 - 변경 범위 기반 자동 검증
 - Agent Eval과 반복 실험
 - Tool Call / Token / Latency 측정
 
-LLM API를 붙이는 것 자체보다 **AI가 실제 개발 작업에서 어디서 도움이 되고 어디서 비용이 늘어나는지 측정 가능한 형태로 만드는 것**에 관심이 있습니다.
+LLM API 자체를 만드는 것보다 **기존 AI 도구를 개발 워크플로에 안전하게 연결하고, 실제로 효율이 좋아졌는지 확인하는 과정**에 관심이 있습니다.
 
 ## Backend
 
