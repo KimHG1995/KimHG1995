@@ -6,14 +6,14 @@
 
 I build backend systems primarily with TypeScript and NestJS.
 
-My AI work is focused less on RAG or model training and more on **developer tools that help coding agents understand and verify real codebases.**
+My AI work is focused on **integrating existing coding-agent tools into real development workflows and measuring whether they actually help.**
 
 ## Selected Projects
 
 | Project | What it solves |
 | --- | --- |
-| [ts-graph-tools](https://github.com/KimHG1995/ts-graph-tools) | Gives coding agents compiler-resolved TypeScript symbols, callers, flows, and impact relationships without reading every file |
-| [agent-bench](https://github.com/KimHG1995/agent-bench) | Evaluates whether ts-graph-tools actually helps Codex versus file-only exploration. In one measured run, Graph reduced tool calls by 25% but increased tokens and latency, exposing where the strategy still needs work. |
+| [ts-graph-tools](https://github.com/KimHG1995/ts-graph-tools) | External host and MCP registration setup for using the existing `@ttsc/graph` tool with Codex/Claude without installing it into the target repository |
+| [agent-bench](https://github.com/KimHG1995/agent-bench) | Evaluates whether connecting `@ttsc/graph` to a coding agent actually helps versus file-only exploration. In one measured run, tool calls dropped while tokens and latency increased, exposing where the integration still needs work. |
 | [codex-quality-setup](https://github.com/KimHG1995/codex-quality-setup) | Runs change-scoped type checks, linting, and tests to verify Codex changes against explicit completion criteria |
 | [PaperTrail](https://github.com/KimHG1995/papertrail) | Document generation platform with asynchronous rendering, versioning, idempotency, and audit trails |
 | [LogLens](https://github.com/KimHG1995/loglens) | ClickHouse Materialized View-based backend for API traffic, latency, and error analytics |
@@ -22,29 +22,29 @@ My AI work is focused less on RAG or model training and more on **developer tool
 
 ## AI Developer Tooling
 
-The workflow I am exploring is concrete:
+I am working on the integration and evaluation layer around existing AI developer tools.
 
 ```text
 Explore repository
   ↓
-Query code relationships through Code Graph / MCP
+Connect MCP / code-graph tools
   ↓
 Coding Agent implements a change
   ↓
 Typecheck / Lint / Test verifies it
   ↓
-Agent Eval measures whether the tooling actually helped
+Agent Eval measures whether the tooling helped
 ```
 
 Current work includes:
 
-- TypeScript Code Graph / MCP
+- MCP hosting and integration around `@ttsc/graph`
 - repository context for coding agents
 - change-scoped automated verification
 - agent evaluation and repeated experiments
 - tool-call, token, and latency measurement
 
-I am interested in making AI development workflows measurable: where a tool helps, where it adds cost, and whether a change actually improves the engineering loop.
+I am interested in making AI development workflows measurable: how existing tools are integrated, where they help, and where they add cost.
 
 ## Backend
 
