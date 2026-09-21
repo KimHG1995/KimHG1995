@@ -1,12 +1,12 @@
 # 김형균
 
-**Backend Engineer / AI Engineering / Automation**
+**Backend Engineer / AI Developer Tooling / Automation**
 
 [English](README.en.md)
 
 > **AI Summary**  
 > 대규모 서비스 운영 경험을 바탕으로 백엔드, 데이터, 인프라 자동화까지 다루는 TypeScript 개발자입니다.  
-> Code Graph MCP, AI 품질 자동화, 로그 분석, 문서 인프라 등 운영 문제를 해결하는 사이드 프로젝트를 만들고 있습니다.
+> MCP, Code Graph, Coding Agent, Eval을 활용해 AI를 실제 개발 과정의 탐색, 검증, 품질 관리에 연결하는 도구를 만들고 있습니다.
 
 TypeScript와 NestJS를 중심으로 백엔드 시스템을 개발하고 있습니다.  
 운영 환경에서 반복되는 문제를 줄이고, 서비스 구조를 더 쉽게 이해하고 검증할 수 있도록 자동화와 AI 개발 도구를 함께 만들고 있습니다.
@@ -17,13 +17,15 @@ TypeScript와 NestJS를 중심으로 백엔드 시스템을 개발하고 있습�
 - 비동기 처리, 데이터 정합성, 장애 대응
 - AI Coding Agent와 MCP 기반 개발 도구
 - 코드 그래프를 활용한 저장소 분석
-- 타입 검사, 린트, 테스트를 연결한 AI 개발 품질 자동화
+- Agent Eval과 재현 가능한 벤치마크
+- 타입 검사, 린트, 테스트를 연결한 개발 품질 자동화
 - 로그 분석과 운영 자동화
 
 ## 주요 프로젝트
 
 | 프로젝트 | 설명 |
 | --- | --- |
+| [agent-bench](https://github.com/KimHG1995/agent-bench) | 같은 모델에서 일반 파일 탐색과 Code Graph MCP 기반 탐색의 정확도, 도구 호출, 토큰, 지연시간을 비교하는 Go 기반 Agent 벤치마크 |
 | [ts-graph-tools](https://github.com/KimHG1995/ts-graph-tools) | TypeScript 코드 구조와 호출 관계를 AI Agent가 탐색할 수 있도록 구성한 Code Graph MCP 환경 |
 | [codex-quality-setup](https://github.com/KimHG1995/codex-quality-setup) | 변경 범위에 맞는 타입 검사, 린트, 테스트를 선택하고 검증하는 Codex 개발 품질 자동화 |
 | [PaperTrail](https://github.com/KimHG1995/papertrail) | 비동기 렌더링, 버전 관리, 멱등성, Audit Trail을 포함한 전자문서 생성 플랫폼 |
@@ -31,9 +33,9 @@ TypeScript와 NestJS를 중심으로 백엔드 시스템을 개발하고 있습�
 | [NetBox Cloud Inventory](https://github.com/KimHG1995/netbox-cloud-inventory) | AWS와 NAVER Cloud 자산을 공통 모델로 정규화하고 관계를 탐색하는 인프라 관리 PoC |
 | [Work History](https://github.com/KimHG1995/work-history) | 실제 업무와 사이드 프로젝트의 문제, 역할, 구현, 결과를 정리한 개발 기록 |
 
-## AI Engineering
+## AI Developer Tooling
 
-LLM API를 단순히 호출하는 것보다 AI를 실제 개발 과정에 어떻게 연결할지에 관심이 있습니다.
+LLM API를 단순히 호출하는 것보다 AI를 실제 개발 과정의 탐색, 구현, 검증에 어떻게 연결할지에 관심이 있습니다.
 
 ```text
 요구사항
@@ -46,18 +48,19 @@ Code Graph / MCP
   ↓
 Typecheck / Lint / Test
   ↓
-AI Review
+Agent Eval / Review
   ↓
 검증된 변경
 ```
 
-현재는 다음 영역을 실험하고 있습니다.
+현재는 다음 영역을 만들고 실험하고 있습니다.
 
 - Repository-aware Coding Agent
 - MCP 기반 개발 도구
 - TypeScript Code Graph
 - 변경 범위 기반 자동 검증
-- AI Agent 품질 평가와 재현 가능한 개발 흐름
+- Agent Benchmark와 deterministic evaluation
+- Tool Call, Token, Latency 기반 개발 도구 평가
 
 ## Backend
 
