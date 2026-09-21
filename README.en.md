@@ -1,15 +1,15 @@
 # Hyung Gyun Kim
 
-**Backend Engineer / AI Engineering / Automation**
+**Backend Engineer / AI Developer Tooling / Automation**
 
 [한국어](README.md)
 
 > **AI Summary**  
 > TypeScript backend engineer with experience operating large-scale services across backend, data, and infrastructure automation.  
-> Building side projects around Code Graph MCP, AI quality automation, log analytics, and document infrastructure to solve real engineering and operational problems.
+> Building tools that connect MCP, code graphs, coding agents, and evaluation to real software exploration, verification, and quality workflows.
 
 I build backend systems primarily with TypeScript and NestJS.  
-I am also interested in reducing repetitive operational work and making software easier to understand and verify through automation and AI-assisted engineering tools.
+I am also interested in reducing repetitive operational work and making software easier to understand and verify through automation and AI developer tooling.
 
 ## Current Interests
 
@@ -17,13 +17,15 @@ I am also interested in reducing repetitive operational work and making software
 - Asynchronous processing, data consistency, and incident handling
 - AI coding agents and MCP-based developer tooling
 - Repository analysis using code graphs
-- AI development quality workflows connected to type checking, linting, and tests
+- Agent evaluation and reproducible benchmarks
+- Development quality workflows connected to type checking, linting, and tests
 - Observability and operational automation
 
 ## Selected Projects
 
 | Project | Description |
 | --- | --- |
+| [agent-bench](https://github.com/KimHG1995/agent-bench) | Go benchmark for comparing file-based and Code Graph MCP-based coding agents across accuracy, tool calls, tokens, and latency |
 | [ts-graph-tools](https://github.com/KimHG1995/ts-graph-tools) | Code Graph MCP environment that helps AI agents explore TypeScript structure and call relationships |
 | [codex-quality-setup](https://github.com/KimHG1995/codex-quality-setup) | Codex workflow for selecting and running task-scoped type checks, linting, and tests |
 | [PaperTrail](https://github.com/KimHG1995/papertrail) | Document generation platform with asynchronous rendering, versioning, idempotency, and audit trails |
@@ -31,9 +33,9 @@ I am also interested in reducing repetitive operational work and making software
 | [NetBox Cloud Inventory](https://github.com/KimHG1995/netbox-cloud-inventory) | Infrastructure inventory PoC that normalizes AWS and NAVER Cloud assets into a common model |
 | [Work History](https://github.com/KimHG1995/work-history) | Engineering records covering problems, responsibilities, implementation decisions, and outcomes |
 
-## AI Engineering
+## AI Developer Tooling
 
-I am more interested in integrating AI into real engineering workflows than simply wrapping an LLM API.
+I am more interested in connecting AI to real software exploration, implementation, and verification workflows than simply wrapping an LLM API.
 
 ```text
 Requirement
@@ -46,18 +48,19 @@ Implementation
   ↓
 Typecheck / Lint / Test
   ↓
-AI Review
+Agent Eval / Review
   ↓
 Verified Change
 ```
 
-Current areas of exploration:
+Current areas of work and experimentation:
 
 - Repository-aware coding agents
 - MCP-based developer tooling
 - TypeScript code graphs
 - Change-scoped automated verification
-- Agent evaluation and reproducible engineering workflows
+- Agent benchmarks and deterministic evaluation
+- Tool-call, token, and latency measurement
 
 ## Backend
 
